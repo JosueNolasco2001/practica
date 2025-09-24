@@ -1,33 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+
 import './App.css'
+import Home from "./pages/home.jsx";
+import Home2 from "./pages/home2.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank yelow">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Josue David Nolasco Aguilera</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> cambio emanuel and save to test HMR Hola soy yo de nuevo Josue Nolasco
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Clic en los logos para mas informacion
-      </p>
+      <>
+      <BrowserRouter>
+        <Routes>
+           
+
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/ruta2" element={<Home2 />}></Route>
+ 
+      </Routes></BrowserRouter>
+
     </>
   )
 }
